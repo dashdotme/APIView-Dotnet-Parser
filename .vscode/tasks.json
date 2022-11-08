@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build_app",
+            "type": "shell",
+            "command": "dotnet clean; dotnet build",
+            "args": [],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "cleanup_files",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-Force",
+                 "./DotnetParser/test*.json"
+                ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build",
+            "dependsOn": [
+                "build_app",
+                "cleanup_files"
+            ],
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/DotnetParser/DotnetParser.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/DotnetParser/DotnetParser.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

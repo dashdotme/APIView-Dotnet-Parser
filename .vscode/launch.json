@@ -1,0 +1,59 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "C++ .NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/DotnetParser/bin/Debug/netcoreapp3.1/DotnetParser.dll",
+            "args": 
+            [
+                "${workspaceFolder}/ExampleData/Inputs/Azure_Storage_Files_Datalake.cppast", 
+                "${workspaceFolder}/ExampleData/Outputs/CPPTest_Azure_Storage_Files_Datalake.json"
+            ],
+            "cwd": "${workspaceFolder}/DotnetParser",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+    
+        {
+            "name": "C .NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/DotnetParser/bin/Debug/netcoreapp3.1/DotnetParser.dll",
+            "args": 
+            [
+                "${workspaceFolder}/ExampleData/Inputs/az_core.zip", 
+                "${workspaceFolder}/ExampleData/Outputs/temp/CTest_az_core.json"
+            ],
+            "cwd": "${workspaceFolder}/DotnetParser",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+
+        {
+            "name": "C# .NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/DotnetParser/bin/Debug/netcoreapp3.1/DotnetParser.dll",
+            "args": 
+            [
+                "${workspaceFolder}/ExampleData/Inputs/Azure.ClientSdk.Analyzers.0.1.1-dev.20221028.1.nupkg", 
+                "${workspaceFolder}/ExampleData/Outputs/CSTest_Azure.ClientSdk.Analyzers.0.1.1-dev.20221028.1.json"
+            ],
+            "cwd": "${workspaceFolder}/DotnetParser",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+    ]
+}
