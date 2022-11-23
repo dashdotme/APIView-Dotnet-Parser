@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2022 Dash Vallance
+Copyright (c) Microsoft Corporation. All rights reserved.
+Copyright (c) 2022 Dash Vallance. Changes: Program.cs rewritten, CLanguageService edited, package renamed from APIView to DotnetParser.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

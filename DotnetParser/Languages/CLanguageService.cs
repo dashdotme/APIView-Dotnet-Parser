@@ -139,9 +139,6 @@ namespace APIView.DotnetParser
                 MemStream = new MemoryStream(MemStream.GetBuffer().AsSpan().Slice(3).ToArray(), 0, MemStream.GetBuffer().Length - 3, true, true);
             }
 
-            // Check this if parser is failing; this is the 'cleaned' UTF8 input fed to the parser
-            // File.WriteAllText("MemStream.txt", Encoding.UTF8.GetString(MemStream.GetBuffer()));
-
             MemStream.Seek(0, SeekOrigin.Begin);
 
             return MemStream;
@@ -151,7 +148,7 @@ namespace APIView.DotnetParser
         {
             byte[] Utf8Bytes = Encoding.Convert(Encoding.Unicode, Encoding.UTF8, stream.GetBuffer().ToArray());
 
-            // Parse out null entries left behind by the conversion
+            // Parse out null entries
             int eof = Utf8Bytes.Length - 1;
             while (Utf8Bytes[eof] == 0 && eof > 0)
             {
